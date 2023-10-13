@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a, li, label{
+font-family: 'Montserrat', sans-serif;;
+}
+
+p {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+font-family: 'Montserrat', sans-serif;
+}
+
+.robotosimple {
+  font-family: 'Roboto', sans-serif !important; 
+}
+
+body {
+  overflow-y: hidden;
+}
