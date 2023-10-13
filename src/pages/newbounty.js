@@ -4,9 +4,9 @@ import NewBounty from "@/components/NewBounty";
 
 const Bounty = () => {
   return (
-        <Layout>
-          <NewBounty />
-        </Layout>
+    <Layout>
+      <NewBounty />
+    </Layout>
   );
 };
 

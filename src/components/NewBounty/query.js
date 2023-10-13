@@ -25,5 +25,3 @@ query MyQuery ($public_address: String!) {
     }
   }
 `
-
-

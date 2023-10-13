@@ -4,9 +4,9 @@ import Layout from "../components/common/Layout/index";
 
 const ApplyNowPage = () => {
   return (
-      <Layout>
-        <ApplyNow />
-      </Layout>
+    <Layout>
+      <ApplyNow />
+    </Layout>
   );
 };
 

@@ -4,11 +4,11 @@ import BountyReview from '@/components/BountyReview';
 
 
 const Submission = () => {
-    return ( <>
-      <Layout>
-         <BountyReview />
-      </Layout>
-    </> );
+  return ( <>
+    <Layout>
+        <BountyReview />
+    </Layout>
+  </> );
 }
  
 export default Submission;
