@@ -3,25 +3,25 @@ import Banner from '@/components/banner';
 // import ProposalsBody from './proposals/propsBody';
 import { getAllPostsData } from '../lib/posts';
 
-export async function getStaticProps() {
-    const allPostsData = JSON.parse(await getAllPostsData()) 
-	// console.log('allPostsData1:', allPostsData);
-    return {
-        props: {
-            allPostsData,
-        },
-    };
-}
-
-// export async function getServerSideProps(context) {
-//     const allPostsData = await getAllPostsData();
-// 	console.log('allPostsData:', allPostsData);
+// export async function getStaticProps() {
+//     const allPostsData = JSON.parse(await getAllPostsData()) 
+// 	// console.log('allPostsData:', allPostsData);
 //     return {
 //         props: {
 //             allPostsData,
 //         },
 //     };
 // }
+
+export async function getServerSideProps(context) {
+    const allPostsData = JSON.parse(await getAllPostsData());
+	// console.log('allPostsData:', allPostsData);
+    return {
+        props: {
+            allPostsData,
+        },
+    };
+}
 
 export default function Proposals({allPostsData}) {
 	console.log('allPostsData1:', allPostsData);
