@@ -1,38 +1,38 @@
 import { useState, useEffect } from "react";
 import Link from 'next/Link';
-import useSWR from 'swr';
+// import useSWR from 'swr';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+// const fetcher = (url) => fetch(url).then((res) => res.json());
 
-function Posts() {
-	const { data, error, isLoading } = useSWR('/api/posts', fetcher)
-	if (error) return []
-	if (isLoading) return []
-	return data.posts
-}
-
-
-// async function getPosts() {
-// 	try {
-// 		const res = await fetch(`/api/posts`);
-
-// 		const resData = await res.json();
-// 		// console.log('resData:', resData);
-// 		if (resData.error) {
-// 			console.error('error1:', resData.error);
-// 		} else {
-// 			if (resData.posts !== undefined) {
-// 				return resData.posts;
-// 			} else {
-// 				console.log(`can't extract data!`);
-// 			}
-// 		}
-// 	} catch (error) {
-// 		console.error('error2:', error);
-// 	}
-
-// 	return [];
+// function Posts() {
+// 	const { data, error, isLoading } = useSWR('/api/posts', fetcher)
+// 	if (error) return []
+// 	if (isLoading) return []
+// 	return data.posts
 // }
+
+
+async function getPosts() {
+	try {
+		const res = await fetch(`/api/posts`);
+
+		const resData = await res.json();
+		// console.log('resData:', resData);
+		if (resData.error) {
+			console.error('error1:', resData.error);
+		} else {
+			if (resData.posts !== undefined) {
+				return resData.posts;
+			} else {
+				console.log(`can't extract data!`);
+			}
+		}
+	} catch (error) {
+		console.error('error2:', error);
+	}
+
+	return [];
+}
 
 
 export default function ProposalsBody() {
@@ -41,21 +41,21 @@ export default function ProposalsBody() {
 		width: `${percentage}%`,
 	};
 
-	const data = Posts();
-	console.log('data:', data);
+	// const data = Posts();
+	// console.log('data:', data);
 	
-	// const [data, setData] = useState([]);
+	const [data, setData] = useState([]);
 
-	// useEffect(() => {
-	// 	async function fetchData() {
-	// 		const posts = await getPosts();
+	useEffect(() => {
+		async function fetchData() {
+			const posts = await getPosts();
 
-	// 		console.log('posts:', posts);
-	// 		setData(posts);
-	// 	}
+			console.log('posts:', posts);
+			setData(posts);
+		}
 
-	// 	fetchData();
-	// }, []);
+		fetchData();
+	}, []);
 
 	return (
 		<div className="flex-1 flex flex-col py-5 px-10">
