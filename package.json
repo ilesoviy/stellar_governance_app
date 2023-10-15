@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev -p 8080",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8080",
     "lint": "next lint"
   },
   "dependencies": {
@@ -17,14 +17,22 @@
     "@soroban-react/freighter": "^3.2.1",
     "@soroban-react/types": "^3.2.1",
     "@soroban-react/wallet-data": "^3.7.1",
+    "mysql": "^2.18.1",
     "next": "13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "soroban-client": "^0.4.0"
+    "soroban-client": "^0.4.0",
+    "tls": "^0.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
+  },
+  "browser": {
+    "fs": false,
+    "net": false,
+    "os": false,
+    "path": false
   }
 }
