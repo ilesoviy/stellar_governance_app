@@ -173,11 +173,6 @@ function ProposalsBody({ allPostsData }) {
 			<div className="border-black border-[3px] rounded">
 				<table className="table-fixed w-full">
 					<tbody>
-						{/* <tr>
-							<td>
-								{allPostsData ? allPostsData[0].id : 0}
-							</td>
-						</tr> */}
 						{allPostsData.map((item) => (
 							<tr
 								key={item.id}
