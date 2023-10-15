@@ -933,7 +933,7 @@ video {
 
 .bg-telluscoopRed {
   --tw-bg-opacity: 1;
-  background-color: rgb(221 33 30 / var(--tw-bg-opacity));
+  background-color: rgb(221 33 30 / var(--tw-bg-opacity)) !important;
 }
 
 .bg-neutral-500 {
