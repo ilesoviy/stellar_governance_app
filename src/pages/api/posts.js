@@ -1,3 +1,5 @@
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+
 var mysql = require('mysql');
 
 async function queryData(conn) {
@@ -12,7 +14,7 @@ async function queryData(conn) {
     });
 }
 
-export async function getAllPostsData() {
+async function getAllPostsData() {
     var data = [];
     var conn = mysql.createConnection({
         host: "localhost",
@@ -36,5 +38,10 @@ export async function getAllPostsData() {
             console.error('An error occurred:', error);
         });
     conn.end();
-    return JSON.stringify(data);
+    return data;
+}
+
+export default async function handler(req, res) {
+    const allPosts = await getAllPostsData();
+    res.status(200).json(allPosts ? {message: "Successfully fetched data", posts: allPosts} : {message: "Failed to fetch data", posts: []});
 }
