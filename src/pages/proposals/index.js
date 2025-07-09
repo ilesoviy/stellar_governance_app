@@ -1,8 +1,11 @@
 import Link from 'next/Link';
 import Banner from '@/components/banner';
 import ProposalsBody from '@/components/propsBody';
+import { useGlobal } from '@/contexts/GlobalContext';
 
 export default function Proposals() {
+	const { chainId } = useGlobal();
+
     return (
         <div className="flex flex-col mx-auto min-h-screen">
 			<Banner />
